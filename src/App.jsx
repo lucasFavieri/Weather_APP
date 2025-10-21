@@ -1,7 +1,7 @@
 import Search from './Search';
 
 function App() {
-  return <src/Search.css />;
+  return <src/Search.jsx />;
 }
 
 export default App;
