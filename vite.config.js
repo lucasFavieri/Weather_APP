@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react({
       babel: {plugins: [['babel-plugin-react-compiler']],},
-      base: '/lucasFavieri/Weather_APP/',
+      base: "Weather_APP",
     }),
   ],
 })
