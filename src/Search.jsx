@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Search.css';
+import 'src/Search.css';
 
 //Verificar porque backgrounds não estão funcionando
 
