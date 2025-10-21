@@ -1,0 +1,309 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body { 
+  font-family: 'Poppins', sans-serif; 
+  height: 100%;
+  width: 100%;
+}
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+.defaultScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  text-align: center;
+  color: rgba(250, 247, 240, 0.935);
+}
+
+.defaultScreen h2{
+  font-size: 2.5rem;
+}
+
+.defaultScreen p{
+  font-size: 1.2rem;
+}
+
+.searchWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 1s ease, opacity 0.8s ease;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Glassmorphism form */
+.searchForm {
+  background: rgba(229, 236, 240, 0.148);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 50px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Ao focar dentro do formulário */
+.searchForm:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Input */
+.searchForm input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[name="searchInput"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px #4a90e2;
+  outline: none;
+}
+
+/* Placeholder */
+.searchForm input::placeholder {
+  color: rgba(255, 255, 255, 0.539);
+  font-style: italic;
+  transition: color 0.3s ease;
+  
+}
+
+.searchForm input:focus::placeholder {
+  color: transparent;
+    transition: color 0.3s ease;
+
+}
+
+/* Remove highlight feio azul */
+.searchForm input:focus {
+  box-shadow: none;
+}
+
+.dataWrapper {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px 40px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+  transition: transform 0.5s;
+  display: flex;
+  max-width: 100%;
+}
+
+.dataWrapper:hover {
+  transform: translateY(-5px);
+}
+
+.errorMsg{
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.306);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: white;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease;
+}
+
+.wi {
+  font-size: 70px;
+  margin-top: 20px;
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+.information{
+  text-align: left;
+}
+
+.temp{
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+.location{
+  font-size: 23px;
+  font-weight: 100;
+}
+
+.description{
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.icon{
+  font-size: 100px;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+.icon, .defaultIcon {
+  width: 150px;
+  height: 150px;
+}
+
+.icons_2{
+  font-size: 18px;
+  display: inline-block;
+}
+
+
+/*--------------------------------------Backgrounds--------------------------------------*/
+
+/* Default */
+
+.searchWrapper.default {
+  background: linear-gradient(to bottom, #538ea3, #c2e3e3);
+  transition: background 1.2s ease-in-out;
+}
+
+/* Default */
+
+
+/* 🌤️ DIA */
+
+/* Céu limpo */
+.searchWrapper.clear {
+  background-image: url(https://images.unsplash.com/photo-1601297183305-6df142704ea2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Nublado */
+.searchWrapper.clouds {
+  background-image: url(https://plus.unsplash.com/premium_photo-1667143327769-1c36fd30a7c6?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Chuva */
+.searchWrapper.rain {
+  background-image: url(https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-d1b0-620a-b04f-4d83ac993076/raw?se=2025-10-05T02%3A41%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=5dfe6f67-dec2-5d08-bd3d-64075f87b254&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-04T22%3A35%3A56Z&ske=2025-10-05T22%3A35%3A56Z&sks=b&skv=2024-08-04&sig=NG12WPEvPXLlOcF4tV9MWydvzS6q2ds9zT2nXdnCrG4%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Tempestade */
+.searchWrapper.thunderstorm {
+  background-image: url(https://sdmntprsoutheastus3.oaiusercontent.com/files/00000000-ba00-620c-bc3f-c076eafe928a/raw?se=2025-10-10T20%3A50%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=066d9c93-13ea-5644-b82a-ade18b8eb018&skoid=f05d6a75-3c59-41ae-be2c-51a75f29841e&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-10T04%3A57%3A16Z&ske=2025-10-11T04%3A57%3A16Z&sks=b&skv=2024-08-04&sig=5VYewNPa1Qt%2BaQEfUkBV2pJKCRTwIYSIgi1p6RvH5Zw%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Neve */
+.searchWrapper.snow {
+  background-image: url(https://sdmntprukwest.oaiusercontent.com/files/00000000-f5f4-6243-b1f0-700bd13be39c/raw?se=2025-10-21T19%3A45%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=594c7407-b5df-439e-ba30-2f17102da942&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-21T00%3A33%3A58Z&ske=2025-10-22T00%3A33%3A58Z&sks=b&skv=2024-08-04&sig=RKnY0Mit7Qj2IlunUNcuM3xikby1lSyHU78KE4gtd1U%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Névoa */
+.searchWrapper.mist {
+  background-image: url(https://chatgpt.com/backend-api/estuary/content?id=file_00000000be8461f48173afb0a3e1cab4&ts=489067&p=fs&cid=1&sig=f2a9d0c06b6a6e1c064dd97f1b7040b43e0fa9f54767d278984377e396835f8f&v=0);
+  background-position: center;
+  background-size: cover;
+}
+
+/* 🌙 NOITE */
+
+/* Céu limpo */
+.searchWrapper.clear-night {
+  background-image: url(https://images.pexels.com/photos/365633/pexels-photo-365633.jpeg?_gl=1*xbo86w*_ga*MTI5NjE3NDU5My4xNzU5NjI4MTQz*_ga_8JE65Q40S6*czE3NjA2Mzc5NTQkbzIkZzEkdDE3NjA2MzgwNjckajI1JGwwJGgw);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Nublado */
+.searchWrapper.clouds-night {
+  background-image: url(https://plus.unsplash.com/premium_photo-1667143327769-1c36fd30a7c6?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Chuva */
+.searchWrapper.rain-night {
+  background-image: url(https://images.unsplash.com/photo-1519692933481-e162a57d6721?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFpbnklMjBkYXl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Tempestade */
+.searchWrapper.thunderstorm-night {
+  background-image: url(https://sdmntprsoutheastus3.oaiusercontent.com/files/00000000-ba00-620c-bc3f-c076eafe928a/raw?se=2025-10-21T19%3A45%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=594c7407-b5df-439e-ba30-2f17102da942&skoid=b928fb90-500a-412f-a661-1ece57a7c318&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-21T04%3A52%3A29Z&ske=2025-10-22T04%3A52%3A29Z&sks=b&skv=2024-08-04&sig=AhVAvCT9xWkK6kb1TXy2gNVwJ8i50BtUCEwenfe/rjs%3D);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Neve */
+.searchWrapper.snow-night {
+  background-image: url(https://images.pexels.com/photos/3801463/pexels-photo-3801463.jpeg?_gl=1*1ek8h6n*_ga*MTI5NjE3NDU5My4xNzU5NjI4MTQz*_ga_8JE65Q40S6*czE3NjA2Mzc5NTQkbzIkZzEkdDE3NjA2Mzc5OTMkajIxJGwwJGgw);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Névoa */
+.searchWrapper.mist-night {
+  background-image: url(https://chatgpt.com/backend-api/estuary/content?id=file_00000000be8461f48173afb0a3e1cab4&ts=489067&p=fs&cid=1&sig=f2a9d0c06b6a6e1c064dd97f1b7040b43e0fa9f54767d278984377e396835f8f&v=0);
+  background-position: center;
+  background-size: cover;
+}
+
+/*--------------------------------------Backgrounds--------------------------------------*/
+
+/*--------------------------------------@Keyframes--------------------------------------*/
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*--------------------------------------@Keyframes--------------------------------------*/
+
+/*--------------------------------------@Media Querrys---------------------------------*/
+
+/*--------------------------------------@Media Querrys---------------------------------*/
+
